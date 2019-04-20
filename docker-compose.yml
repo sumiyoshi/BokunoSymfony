@@ -4,6 +4,6 @@ services:
     build: ./.docker/php
     container_name: "local-symfony-app"
     ports:
-      - "8000:8000"
+      - "8000:80"
     volumes:
       - ./product:/var/opt/app
