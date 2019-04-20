@@ -7,9 +7,7 @@ RUN docker-php-ext-install -j$(nproc) zip
 
 # composerのインストール
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
-# https://getcomposer.org/doc/03-cli.md#composer-allow-superuser
 ENV COMPOSER_ALLOW_SUPERUSER 1
-# composerの参照を日本に設定
 RUN composer config -g repos.packagist composer https://packagist.jp
 
 WORKDIR /var/opt/app

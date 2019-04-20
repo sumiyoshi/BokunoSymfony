@@ -7,3 +7,19 @@ services:
       - "8000:80"
     volumes:
       - ./product:/var/opt/app
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - ./.docker/database/docker-entrypoint-initdb.d/:/docker-entrypoint-initdb.d
+      - ./.docker/database/data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    container_name: local-symfony-db
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: "true"
+  node:
+    image: node:11
+    working_dir: /var/opt/app
+    volumes:
+      - ./product:/var/opt/app
+    container_name: local-symfony-node
