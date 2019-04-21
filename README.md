@@ -8,7 +8,13 @@ docker-compose exec app composer install
 
 docker-compose exec app composer up -d
 
-docker-compose run --rm node npm install -g yarn
+
+
+
+docker-compose run --rm node npm install
+docker-compose run --rm node npm run start
+
+docker-compose exec app composer require encore
 ```
 
 ## Command
