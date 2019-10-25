@@ -5,6 +5,9 @@ RUN apt-get install -y git zip unzip libzip-dev
 
 RUN docker-php-ext-install -j$(nproc) zip
 
+RUN pecl install xdebug \
+  && docker-php-ext-enable xdebug
+
 # composerのインストール
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 ENV COMPOSER_ALLOW_SUPERUSER 1

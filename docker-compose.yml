@@ -6,6 +6,7 @@ services:
     ports:
       - "8000:80"
     volumes:
+      - ./.docker/php/php.ini:/usr/local/etc/php/php.ini
       - ./product:/var/opt/app
   mysql:
     image: mysql:5.7
