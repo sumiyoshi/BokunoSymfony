@@ -14,6 +14,8 @@ class LuckyController
      */
     public function number(LoggerInterface $logger): JsonResponse
     {
+        $logger->info('We are logging!');
+
         $number = random_int(0, 100);
 
         return new JsonResponse(
