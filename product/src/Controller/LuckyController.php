@@ -2,15 +2,22 @@
 
 namespace App\Controller;
 
+use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Twig\Environment;
 
 class LuckyController
 {
+    private $logger;
+
     private $twig;
 
-    public function __construct(Environment $twig)
+    public function __construct(
+        LoggerInterface $logger,
+        Environment $twig
+    )
     {
+        $this->logger = $logger;
         $this->twig = $twig;
     }
 
@@ -20,6 +27,8 @@ class LuckyController
      */
     public function number(): Response
     {
+        $this->logger->info(__CLASS__);
+
         $number = random_int(0, 100);
 
         return new Response($this->twig->render('lucky/number.html.twig', [
