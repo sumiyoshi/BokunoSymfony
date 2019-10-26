@@ -12,7 +12,13 @@ docker-compose exec app composer install
 ## Command
 
 ```
-docker-compose exec app php bin/console symfony/profiler-pack
+docker-compose exec app php bin/console
+```
+
+## Test
+
+```
+docker-compose exec app php bin/phpunit --coverage-html tests/@report
 ```
 
 
