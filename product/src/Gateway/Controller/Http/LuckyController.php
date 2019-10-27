@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Controller;
+namespace App\Gateway\Controller\Http;
 
 use Psr\Log\LoggerInterface;
 use Symfony\Component\HttpFoundation\Response;

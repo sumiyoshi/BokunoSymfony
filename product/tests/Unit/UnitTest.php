@@ -8,6 +8,4 @@ class UnitTest extends TestCase
     {
         $this->assertEquals(1, 1);
     }
-
-
 }

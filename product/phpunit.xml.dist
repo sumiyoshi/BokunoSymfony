@@ -23,7 +23,9 @@
 
     <filter>
         <whitelist>
-            <directory>src</directory>
+            <directory>src/Domain</directory>
+            <directory>src/Gateway</directory>
+            <directory>src/Infrastructure</directory>
         </whitelist>
     </filter>
 
